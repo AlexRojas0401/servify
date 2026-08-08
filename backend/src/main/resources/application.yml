@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: servify
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/servify
+    username: servify
+    password: servify123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    open-in-view: false
+
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: INFO

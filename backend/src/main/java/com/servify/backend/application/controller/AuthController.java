@@ -1,7 +1,9 @@
 package com.servify.backend.application.controller;
 
 import com.servify.backend.application.service.AuthService;
+import com.servify.backend.domain.dto.request.LoginRequest;
 import com.servify.backend.domain.dto.request.RegisterRequest;
+import com.servify.backend.domain.dto.response.LoginResponse;
 import com.servify.backend.domain.dto.response.RegisterResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -28,5 +30,13 @@ public class AuthController {
                 .status(HttpStatus.CREATED)
                 .body(response);
     }
-}
 
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(
+            @Valid @RequestBody LoginRequest request
+    ) {
+        LoginResponse response = authService.login(request);
+
+        return ResponseEntity.ok(response);
+    }
+}

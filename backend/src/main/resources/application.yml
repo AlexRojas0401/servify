@@ -21,3 +21,7 @@ spring:
 logging:
   level:
     org.hibernate.SQL: INFO
+
+jwt:
+  secret: servify-super-secret-key-for-jwt-2026-development
+  expiration: 86400000
